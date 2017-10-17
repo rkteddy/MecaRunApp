@@ -12,5 +12,11 @@ class LaunchActivity: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         intent = Intent(this, MainActivity::class.java)
+
+        // Appear
+        val view = View.inflate(this, R.layout.activity_launch, null)
+        view.alpha = 0f
+        setContentView(view)
+
     }
 }
