@@ -18,5 +18,21 @@ class LaunchActivity: AppCompatActivity() {
         view.alpha = 0f
         setContentView(view)
 
+        view.animate()
+                .setDuration(2000)
+                .alpha(1f)
+                .setListener(object: AnimatorListenerAdapter() {
+                    override fun onAnimationEnd(animator: Animator) {
+                        view.animate()
+                                .setDuration(2000)
+                                .alpha(0f)
+                                .setListener(object: AnimatorListenerAdapter() {
+                                    override fun onAnimationEnd(animation: Animator) {
+                                        startActivity(intent)
+                                        finish()
+                                    }
+                                })
+                    }
+                })
     }
 }
