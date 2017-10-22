@@ -100,6 +100,31 @@ class MainActivity : AppCompatActivity() {
     }
 
     /**
+     * Initialize broadcast receiver
+     */
+    private val mBluetoothReceiver = object: BroadcastReceiver() {
+        override fun onReceive(context: Context, intent: Intent) {
+            val action = intent.action
+            Log.i(TAG, "Action: $action")
+            when (action) {
+                BluetoothDevice.ACTION_FOUND -> {
+                    val scanDevice = intent.getParcelableExtra<BluetoothDevice>(BluetoothDevice.EXTRA_DEVICE)
+                    if (scanDevice == null || scanDevice.name == null) return
+                    Log.i(TAG, "name=" + scanDevice.name + "address=" + scanDevice.address)
+                    var name = scanDevice.name
+                    val address = scanDevice.address
+                }
+                BluetoothAdapter.ACTION_DISCOVERY_STARTED -> {
+                    Log.i(TAG, "Start scanning")
+                }
+                BluetoothAdapter.ACTION_DISCOVERY_FINISHED -> {
+                    Log.i(TAG, "Finish scanning")
+                }
+            }
+        }
+    }
+
+    /**
      * When exit activity
      */
     override fun onDestroy() {
