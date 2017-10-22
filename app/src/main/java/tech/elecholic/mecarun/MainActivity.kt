@@ -49,6 +49,17 @@ class MainActivity : AppCompatActivity() {
     }
 
     /**
+     * Process for bluetooth successfully connect to server
+     */
+    private fun manageConnectedSocket(socket: BluetoothSocket) {
+        val mBluetoothSocketHandler = BluetoothSocketHandler.get()
+        mBluetoothSocketHandler.setSocket(socket)
+        val intent = Intent(this, ControlActivity::class.java)
+        startActivity(intent)
+        Log.i(TAG, "Successfully connect to server")
+    }
+
+    /**
      * When exit activity
      */
     override fun onDestroy() {
