@@ -49,6 +49,16 @@ class MainActivity : AppCompatActivity() {
     }
 
     /**
+     * Search devices
+     */
+    fun onClickSearch(v: View) {
+        if (mBluetoothAdapter.isDiscovering) {
+            mBluetoothAdapter.cancelDiscovery()
+        }
+        mBluetoothAdapter.startDiscovery()
+    }
+
+    /**
      * Process for bluetooth successfully connect to server
      */
     private fun manageConnectedSocket(socket: BluetoothSocket) {
