@@ -100,6 +100,17 @@ class MainActivity : AppCompatActivity() {
     }
 
     /**
+     * Initialize broadcast filter
+     */
+    private fun initFilter() {
+        val filter = IntentFilter()
+        filter.addAction(BluetoothDevice.ACTION_FOUND)
+        filter.addAction(BluetoothAdapter.ACTION_DISCOVERY_STARTED)
+        filter.addAction(BluetoothAdapter.ACTION_DISCOVERY_FINISHED)
+        registerReceiver(mBluetoothReceiver, filter)
+    }
+
+    /**
      * Initialize broadcast receiver
      */
     private val mBluetoothReceiver = object: BroadcastReceiver() {
