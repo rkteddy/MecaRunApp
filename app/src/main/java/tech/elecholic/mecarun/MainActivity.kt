@@ -59,6 +59,36 @@ class MainActivity : AppCompatActivity() {
     }
 
     /**
+     * Connection
+     */
+    fun startConnection(mmDevice: BluetoothDevice) {
+        // Start a thread for connection
+        mBluetoothAdapter.cancelDiscovery()
+        var bluetoothSocket: BluetoothSocket? = null
+        try {
+            bluetoothSocket = mmDevice.createRfcommSocketToServiceRecord(MY_UUID)
+        } catch (e: Exception) {
+            Log.i(TAG, "Fetch socket error: ${e.message}")
+        }
+        Thread.sleep(500)
+        val connectThread = Thread {
+            try {
+                bluetoothSocket!!.connect()
+            } catch (e: Exception) {
+                // Unable to connect, try to close the socket and get out
+                Log.i(TAG, "Bluetooth connection to server exception: ${e.message}")
+                try {
+                    bluetoothSocket!!.close()
+                } catch (e: Exception) {
+                }
+                return@Thread
+            }
+            manageConnectedSocket(bluetoothSocket!!)
+        }
+        connectThread.start()
+    }
+
+    /**
      * Process for bluetooth successfully connect to server
      */
     private fun manageConnectedSocket(socket: BluetoothSocket) {
