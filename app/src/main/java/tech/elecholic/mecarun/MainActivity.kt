@@ -151,6 +151,22 @@ class MainActivity : AppCompatActivity() {
                 }
                 BluetoothAdapter.ACTION_DISCOVERY_FINISHED -> {
                     Log.i(TAG, "Finish scanning")
+                    // Set animation
+                    // Recover rotating speed
+                    val lowAnimation = AnimationUtils.loadAnimation(context, R.anim.zoom_out)
+                    lowAnimation.interpolator = LinearInterpolator()
+                    mecanum_icon.startAnimation(lowAnimation)
+                    // Button back
+                    val leftAnimation = AnimationUtils.loadAnimation(context, R.anim.left_in)
+                    val rightAnimation = AnimationUtils.loadAnimation(context, R.anim.right_in)
+                    rightAnimation.fillAfter = true
+                    leftAnimation.fillAfter = true
+                    launchBtn.startAnimation(leftAnimation)
+                    searchBtn.startAnimation(rightAnimation)
+                    // Set text
+                    searchText.visibility = View.GONE
+                    searchText.clearAnimation()
+                    notFoundText.visibility = View.VISIBLE
                 }
             }
         }
