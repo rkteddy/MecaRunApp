@@ -127,6 +127,27 @@ class MainActivity : AppCompatActivity() {
                 }
                 BluetoothAdapter.ACTION_DISCOVERY_STARTED -> {
                     Log.i(TAG, "Start scanning")
+                    // Set animation
+                    // Accelerate rotating mecanum
+                    val highAnimation = AnimationUtils.loadAnimation(context, R.anim.zoom_in)
+                    highAnimation.interpolator = LinearInterpolator()
+                    mecanum_icon.startAnimation(highAnimation)
+                    // Button leave
+                    val leftAnimation = AnimationUtils.loadAnimation(context, R.anim.left_out)
+                    val rightAnimation = AnimationUtils.loadAnimation(context, R.anim.right_out)
+                    rightAnimation.fillAfter = true
+                    leftAnimation.fillAfter = true
+                    launchBtn.startAnimation(rightAnimation)
+                    searchBtn.startAnimation(leftAnimation)
+                    // Text flash
+                    searchText.visibility = View.VISIBLE
+                    notFoundText.visibility = View.GONE
+                    val alphaAnimation = AlphaAnimation(0f, 1f)
+                    alphaAnimation.duration = 1000
+                    alphaAnimation.interpolator = LinearInterpolator()
+                    alphaAnimation.repeatCount = Animation.INFINITE
+                    alphaAnimation.repeatMode = Animation.REVERSE
+                    searchText.startAnimation(alphaAnimation)
                 }
                 BluetoothAdapter.ACTION_DISCOVERY_FINISHED -> {
                     Log.i(TAG, "Finish scanning")
