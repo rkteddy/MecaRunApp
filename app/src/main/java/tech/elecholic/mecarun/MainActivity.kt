@@ -173,6 +173,16 @@ class MainActivity : AppCompatActivity() {
     }
 
     /**
+     * Launch bluetooth
+     */
+    fun launchBluetooth(context: Activity, requestCode: Int) {
+        if (!mBluetoothAdapter.isEnabled) {
+            val enableBTIntent = Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE)
+            context.startActivityForResult(enableBTIntent, requestCode)
+        }
+    }
+
+    /**
      * When exit activity
      */
     override fun onDestroy() {
