@@ -49,6 +49,34 @@ class MainActivity : AppCompatActivity() {
     }
 
     /**
+     * Initialize Server
+     */
+    private fun startServer() {
+        if (!mBluetoothAdapter.isEnabled) {
+            throw RuntimeException("Please launch bluetooth")
+        }
+        mmServerSocket = mBluetoothAdapter.listenUsingInsecureRfcommWithServiceRecord("Teddy", MY_UUID)
+        mmServerSocket?: return
+        // New thread to start a server socket and wait for connection
+        val serverThread = Thread {
+            Log.i(TAG, "Server started")
+            var socket: BluetoothSocket?
+            while(true){
+                try{
+                    socket = mmServerSocket!!.accept()
+                } catch (e: IOException) {
+                    break
+                }
+                if (socket != null) {
+                    manageConnectedSocket(socket)
+                    mmServerSocket!!.close()
+                }
+            }
+        }
+        serverThread.start()
+    }
+
+    /**
      * Search devices
      */
     fun onClickSearch(v: View) {
