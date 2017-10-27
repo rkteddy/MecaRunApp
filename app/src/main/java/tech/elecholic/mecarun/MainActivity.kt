@@ -77,6 +77,19 @@ class MainActivity : AppCompatActivity() {
     }
 
     /**
+     * Launch bluetooth
+     */
+    fun onClickLaunch(v: View) {
+        try {
+            launchBluetooth(this, REQUEST_ENABLE_BT)
+        } catch (e: NullPointerException) {
+            Log.i(TAG, e.message)
+        } catch (e: RuntimeException) {
+            Log.i(TAG, e.message)
+        }
+    }
+
+    /**
      * Search devices
      */
     fun onClickSearch(v: View) {
