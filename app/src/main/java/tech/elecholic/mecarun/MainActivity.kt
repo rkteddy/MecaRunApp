@@ -224,6 +224,16 @@ class MainActivity : AppCompatActivity() {
     }
 
     /**
+     * Search devices
+     */
+    fun searchDevices() {
+        if (mBluetoothAdapter.isDiscovering) {
+            mBluetoothAdapter.cancelDiscovery()
+        }
+        mBluetoothAdapter.startDiscovery()
+    }
+
+    /**
      * When exit activity
      */
     override fun onDestroy() {
