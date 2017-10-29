@@ -243,6 +243,17 @@ class MainActivity : AppCompatActivity() {
     }
 
     /**
+     * Location permission request
+     */
+    private fun checkAccredit() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            if (this.checkSelfPermission(Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                requestPermissions(arrayOf(Manifest.permission.ACCESS_COARSE_LOCATION), PERMISSION_REQUEST_COARSE_LOCATION)
+            }
+        }
+    }
+
+    /**
      * When exit activity
      */
     override fun onDestroy() {
