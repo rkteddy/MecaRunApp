@@ -254,6 +254,22 @@ class MainActivity : AppCompatActivity() {
     }
 
     /**
+     * Deal with location permission request result
+     */
+    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
+        when (requestCode) {
+            PERMISSION_REQUEST_COARSE_LOCATION -> if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                Log.i(TAG, "User permit location permission")
+                searchDevices()
+            } else {
+                Log.i(TAG, "User refuse location permission")
+                cancelSearch()
+                finish()
+            }
+        }
+    }
+
+    /**
      * When exit activity
      */
     override fun onDestroy() {
