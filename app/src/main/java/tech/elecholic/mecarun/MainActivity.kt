@@ -270,6 +270,23 @@ class MainActivity : AppCompatActivity() {
     }
 
     /**
+     * Deal with bluetooth launching permission request result
+     */
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode ==REQUEST_ENABLE_BT) {
+            if (resultCode == Activity.RESULT_OK) {
+                Log.i(TAG, "Bluetooth launched, start server")
+                checkAccredit()
+                initFilter()
+                startServer()
+            } else {
+                Log.i(TAG, "User refuse to launch bluetooth")
+            }
+        }
+    }
+
+    /**
      * When exit activity
      */
     override fun onDestroy() {
