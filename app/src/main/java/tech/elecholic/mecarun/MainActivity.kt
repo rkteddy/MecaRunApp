@@ -55,6 +55,13 @@ class MainActivity : AppCompatActivity() {
         } catch (e: RuntimeException) {
             Log.e(TAG, e.message)
         }
+
+        if (mBluetoothAdapter.isEnabled)
+        {
+            checkAccredit()
+            initFilter()
+//            startServer()
+        }
     }
 
     /**
