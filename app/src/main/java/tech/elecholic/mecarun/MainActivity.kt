@@ -46,6 +46,15 @@ class MainActivity : AppCompatActivity() {
         val lowAnimation = AnimationUtils.loadAnimation(this, R.anim.low_speed_rotation)
         lowAnimation.interpolator = LinearInterpolator()
         mecanum_icon.startAnimation(lowAnimation)
+
+        // Launch Bluetooth
+        try {
+            launchBluetooth(this, REQUEST_ENABLE_BT)
+        } catch (e: NullPointerException) {
+            Log.e(TAG, e.message)
+        } catch (e: RuntimeException) {
+            Log.e(TAG, e.message)
+        }
     }
 
     /**
