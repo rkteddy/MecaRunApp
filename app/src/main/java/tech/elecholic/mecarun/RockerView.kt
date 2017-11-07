@@ -29,4 +29,24 @@ class RockerView: View {
     private val INNER_COLOR_DEFAULT = Color.parseColor("#d32f2f")
     private val OUTER_COLOR_DEFAULT = Color.parseColor("#f44336")
 
+    constructor(context: Context) : this(context, null)
+
+    constructor(context: Context, attrs: AttributeSet?) : super(context, attrs) {
+        // Obtain attributes from XML file
+        val a = context.obtainStyledAttributes(attrs, R.styleable.RockerView)
+        innerColor = a.getColor(R.styleable.RockerView_InnerColor, INNER_COLOR_DEFAULT)
+        outerColor = a.getColor(R.styleable.RockerView_OuterColor, OUTER_COLOR_DEFAULT)
+        a.recycle()
+        // Convert units
+        OUTER_WIDTH_SIZE = dip2px(context, 125.0f)
+        OUTER_HEIGHT_SIZE = dip2px(context, 125.0f)
+        // Prepare to draw circle
+        outerCircle = Paint()
+        innerCircle = Paint()
+        outerCircle.color = outerColor
+        outerCircle.style = Paint.Style.FILL_AND_STROKE
+        innerCircle.color = innerColor
+        innerCircle.style = Paint.Style.FILL_AND_STROKE
+    }
+
 }
