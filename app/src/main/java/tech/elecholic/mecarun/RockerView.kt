@@ -49,4 +49,12 @@ class RockerView: View {
         innerCircle.style = Paint.Style.FILL_AND_STROKE
     }
 
+    /**
+     * Convert units from dip(dp) to px
+     */
+    private fun dip2px(context: Context, dpValue: Float): Int {
+        val scale = context.resources.displayMetrics.density
+        return (dpValue * scale + 0.5f).toInt()
+    }
+
 }
