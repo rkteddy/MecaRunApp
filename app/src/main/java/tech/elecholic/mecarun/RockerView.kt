@@ -57,4 +57,12 @@ class RockerView: View {
         return (dpValue * scale + 0.5f).toInt()
     }
 
+    /**
+     * Override onMeasure function to set a certain size of View
+     */
+    override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec)
+        setMeasuredDimension(measureWidth(widthMeasureSpec), measureHeight(heightMeasureSpec))
+    }
+
 }
