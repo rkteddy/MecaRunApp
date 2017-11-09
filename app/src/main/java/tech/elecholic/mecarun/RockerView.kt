@@ -82,4 +82,21 @@ class RockerView: View {
         }
     }
 
+    /**
+     * Determine height for three different modes
+     */
+    private fun measureHeight(heightMeasureSpec: Int): Int {
+        val heightMode = View.MeasureSpec.getMode(heightMeasureSpec)
+        val heightVal = View.MeasureSpec.getSize(heightMeasureSpec)
+        return if (heightMode != View.MeasureSpec.EXACTLY) {
+            if (heightMode == View.MeasureSpec.UNSPECIFIED) {
+                OUTER_HEIGHT_SIZE
+            } else {
+                Math.min(OUTER_HEIGHT_SIZE, heightVal)
+            }
+        } else {
+            heightVal + paddingTop + paddingBottom
+        }
+    }
+
 }
