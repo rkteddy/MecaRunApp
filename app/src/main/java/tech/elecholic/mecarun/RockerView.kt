@@ -99,4 +99,15 @@ class RockerView: View {
         }
     }
 
+    /**
+     * While size change
+     */
+    override fun onSizeChanged(width: Int, height: Int, preWidth: Int, preHeight: Int) {
+        super.onSizeChanged(width, height, preWidth, preHeight)
+        realWidth = width.toFloat()
+        realHeight = height.toFloat()
+        innerCircleX = (realWidth/2)
+        innerCircleY = (realHeight/2)
+    }
+
 }
