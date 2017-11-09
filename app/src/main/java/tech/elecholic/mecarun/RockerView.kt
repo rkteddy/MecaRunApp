@@ -65,4 +65,21 @@ class RockerView: View {
         setMeasuredDimension(measureWidth(widthMeasureSpec), measureHeight(heightMeasureSpec))
     }
 
+    /**
+     * Determine width for three different modes
+     */
+    private fun measureWidth(widthMeasureSpec: Int): Int {
+        val widthMode = View.MeasureSpec.getMode(widthMeasureSpec)
+        val widthVal = View.MeasureSpec.getSize(widthMeasureSpec)
+        return if (widthMode != View.MeasureSpec.EXACTLY) {
+            if (widthMode == View.MeasureSpec.UNSPECIFIED) {
+                OUTER_WIDTH_SIZE
+            } else {
+                Math.min(OUTER_WIDTH_SIZE, widthVal)
+            }
+        } else {
+            widthVal + paddingLeft + paddingRight
+        }
+    }
+
 }
