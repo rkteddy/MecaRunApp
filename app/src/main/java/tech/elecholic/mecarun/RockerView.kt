@@ -125,4 +125,22 @@ class RockerView: View {
         canvas.drawCircle(innerCircleX, innerCircleY, innerRadius, innerCircle)
     }
 
+    /**
+     * Change inner circle position while touch event occurs
+     */
+    override fun onTouchEvent(event: MotionEvent?): Boolean {
+        if (event!!.action == MotionEvent.ACTION_DOWN) {
+            changeInnerCirclePosition(event)
+        }
+        if (event.action == MotionEvent.ACTION_MOVE) {
+            changeInnerCirclePosition(event)
+        }
+        if (event.action == MotionEvent.ACTION_UP) {
+            innerCircleX = realWidth/2
+            innerCircleY = realHeight/2
+            invalidate()
+        }
+        return true
+    }
+
 }
