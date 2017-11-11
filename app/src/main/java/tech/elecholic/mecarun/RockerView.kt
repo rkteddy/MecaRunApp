@@ -110,4 +110,19 @@ class RockerView: View {
         innerCircleY = (realHeight/2)
     }
 
+    /**
+     * Draw two circles
+     */
+    override fun onDraw(canvas: Canvas) {
+        super.onDraw(canvas)
+        outerRadius = Math.min(Math.min(realWidth/2 - paddingLeft, realWidth/2 - paddingRight)
+                ,Math.min(realHeight/2 - paddingTop, realHeight/2 - paddingBottom)
+                * 3/4)
+        // Outer circle
+        canvas.drawCircle(realWidth/2, realHeight/2, outerRadius, outerCircle)
+        // Inner circle
+        innerRadius = outerRadius/2
+        canvas.drawCircle(innerCircleX, innerCircleY, innerRadius, innerCircle)
+    }
+
 }
