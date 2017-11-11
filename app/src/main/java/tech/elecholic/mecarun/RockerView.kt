@@ -143,4 +143,32 @@ class RockerView: View {
         return true
     }
 
+    /**
+     * Change inner circle position base on function of circle: (x - realWidth/2)^2 + (y - realHeight/2)^2 <= outerRadius^2
+     */
+    private fun changeInnerCirclePosition(event: MotionEvent?) {
+        val absoluteX = event!!.x
+        val absoluteY = event.y
+        val outerX = realWidth/2
+        val outerY = realHeight/2
+        val relativeX = (absoluteX - outerX).toDouble()
+        val relativeY = (outerY - absoluteY).toDouble()
+        val relativeR = Math.sqrt(Math.pow(relativeX, 2.0) + Math.pow(relativeY, 2.0))
+        val sin = relativeY / relativeR
+        val cos = relativeX / relativeR
+        angle = (Math.asin(sin) * 180.0 / 3.14159).toFloat() - 90
+        if (cos > 0) angle = -angle
+        mListener.onAngleChanged(angle)
+        val isPointInOuterCircle: Boolean = (Math.pow(relativeX, 2.0) + Math.pow(relativeY, 2.0)
+                <= Math.pow(outerRadius.toDouble(), 2.0))
+        if (isPointInOuterCircle) {
+            innerCircleX = absoluteX
+            innerCircleY = absoluteY
+        } else {
+            innerCircleX = (outerX + outerRadius * 3/4 * cos).toFloat()
+            innerCircleY = (outerY - outerRadius * 3/4 * sin).toFloat()
+        }
+        invalidate()
+    }
+
 }
