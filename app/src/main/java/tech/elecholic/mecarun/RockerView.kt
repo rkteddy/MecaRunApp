@@ -171,4 +171,14 @@ class RockerView: View {
         invalidate()
     }
 
+    /**
+     * Listener
+     */
+    interface OnAngleChangedListener {
+        fun onAngleChanged(ang: Float)
+    }
+
+    fun setOnAngleChangedListener(listener: OnAngleChangedListener) {
+        mListener = listener
+    }
 }
