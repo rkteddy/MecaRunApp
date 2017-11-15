@@ -19,7 +19,7 @@ class ControlActivity: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_control)
-        val receiveThread = Thread{
+        Thread{
 
             val buffer = ByteArray(1024)
 
@@ -33,8 +33,7 @@ class ControlActivity: AppCompatActivity() {
                     break
                 }
             }
-        }
-        receiveThread.start()
+        }.start()
 
         rockerView.setOnAngleChangedListener(object: RockerView.OnAngleChangedListener {
             override fun onAngleChanged(ang: Float) {
