@@ -140,7 +140,7 @@ class MainActivity : AppCompatActivity() {
                 }
                 return@Thread
             }
-            manageConnectedSocket(bluetoothSocket!!)
+            manageConnectedSocket(bluetoothSocket)
         }
         connectThread.start()
     }
@@ -178,9 +178,9 @@ class MainActivity : AppCompatActivity() {
                 BluetoothDevice.ACTION_FOUND -> {
                     val scanDevice = intent.getParcelableExtra<BluetoothDevice>(BluetoothDevice.EXTRA_DEVICE)
                     if (scanDevice == null || scanDevice.name == null) return
-                    Log.i(TAG, "name=" + scanDevice.name + "address=" + scanDevice.address)
                     var name = scanDevice.name
                     val address = scanDevice.address
+                    Log.i(TAG, "name=" + name + "address=" + address)
                 }
                 BluetoothAdapter.ACTION_DISCOVERY_STARTED -> {
                     Log.i(TAG, "Start scanning")
