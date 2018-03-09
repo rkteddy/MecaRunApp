@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
     private val mBluetoothAdapter: BluetoothAdapter = BluetoothAdapter.getDefaultAdapter()
             ?: throw NullPointerException("Device does not support Bluetooth")
     private val PERMISSION_REQUEST_COARSE_LOCATION = 1
-    private val MY_UUID = UUID.fromString("f710e010-b190-4d24-a47b-eb7b100bab39")
+    private var MY_UUID = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB")
     private val TAG = "MainActivity"
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -60,7 +60,7 @@ class MainActivity : AppCompatActivity() {
         {
             checkAccredit()
             initFilter()
-//            startServer()
+            startServer()
         }
     }
 
@@ -113,6 +113,7 @@ class MainActivity : AppCompatActivity() {
             mBluetoothAdapter.cancelDiscovery()
         }
         mBluetoothAdapter.startDiscovery()
+        Log.i(TAG, "Clicked")
     }
 
     /**
@@ -123,26 +124,28 @@ class MainActivity : AppCompatActivity() {
         mBluetoothAdapter.cancelDiscovery()
         var bluetoothSocket: BluetoothSocket? = null
         try {
-            bluetoothSocket = mmDevice.createRfcommSocketToServiceRecord(MY_UUID)
+            bluetoothSocket = mmDevice.createInsecureRfcommSocketToServiceRecord(MY_UUID)
+//            bluetoothSocket = mmDevice.javaClass.getMethod("createRfcommSocket", Int::class.javaPrimitiveType).invoke(mmDevice, 1) as BluetoothSocket
         } catch (e: Exception) {
             Log.i(TAG, "Fetch socket error: ${e.message}")
         }
         Thread.sleep(500)
-        val connectThread = Thread {
-            try {
-                bluetoothSocket!!.connect()
-            } catch (e: Exception) {
-                // Unable to connect, try to close the socket and get out
-                Log.i(TAG, "Bluetooth connection to server exception: ${e.message}")
+        Thread {
+            Thread {
                 try {
-                    bluetoothSocket!!.close()
+                    bluetoothSocket!!.connect()
                 } catch (e: Exception) {
+                    // Unable to connect, try to close the socket and get out
+                    Log.i(TAG, "Bluetooth connection to server exception: ${e.message}")
+                    try {
+                        bluetoothSocket!!.close()
+                    } catch (e: Exception) {
+                    }
+                    return@Thread
                 }
-                return@Thread
-            }
-            manageConnectedSocket(bluetoothSocket)
-        }
-        connectThread.start()
+                manageConnectedSocket(bluetoothSocket)
+            }.start()
+        }.start()
     }
 
     /**
@@ -178,9 +181,19 @@ class MainActivity : AppCompatActivity() {
                 BluetoothDevice.ACTION_FOUND -> {
                     val scanDevice = intent.getParcelableExtra<BluetoothDevice>(BluetoothDevice.EXTRA_DEVICE)
                     if (scanDevice == null || scanDevice.name == null) return
-                    var name = scanDevice.name
+                    val name = scanDevice.name
                     val address = scanDevice.address
-                    Log.i(TAG, "name=" + name + "address=" + address)
+                    if (name == "ZINGBT"){
+                        Thread {
+                            try {
+                                scanDevice.javaClass.getMethod("createBond").invoke(scanDevice)
+                            } catch (e: Exception) {
+                                Log.i(TAG, "Bond failed")
+                            }
+                            startConnection(scanDevice)
+                        }.start()
+                    }
+                    Log.i(TAG, "name = $name address = $address")
                 }
                 BluetoothAdapter.ACTION_DISCOVERY_STARTED -> {
                     Log.i(TAG, "Start scanning")
