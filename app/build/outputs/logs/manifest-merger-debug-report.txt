@@ -1,0 +1,123 @@
+-- Merging decision tree log ---
+manifest
+ADDED from C:\Users\zrk83\Documents\Repositories\MecaRunApp\app\src\main\AndroidManifest.xml:2:1-26:12
+INJECTED from C:\Users\zrk83\Documents\Repositories\MecaRunApp\app\src\main\AndroidManifest.xml:2:1-26:12
+INJECTED from C:\Users\zrk83\Documents\Repositories\MecaRunApp\app\src\main\AndroidManifest.xml:2:1-26:12
+INJECTED from C:\Users\zrk83\Documents\Repositories\MecaRunApp\app\src\main\AndroidManifest.xml:2:1-26:12
+MERGED from [com.android.support:appcompat-v7:27.1.0] C:\Users\zrk83\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.0.aar\0aad7d85238d51e674372fddf3edaf70\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\zrk83\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\5e1e5273e5338ae560a210e2d119a5ee\AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:support-fragment:27.1.0] C:\Users\zrk83\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.0.aar\cc869da6e984f2a946ba102785abcba6\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:27.1.0] C:\Users\zrk83\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.0.aar\52ca45cc328a74579727a296d97e0e0d\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:27.1.0] C:\Users\zrk83\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.0.aar\5cc8bb3c765209ff5aa8d1507a06f5ef\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:27.1.0] C:\Users\zrk83\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.0.aar\8634a234133af22a2e3a2cee53be5912\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:27.1.0] C:\Users\zrk83\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.0.aar\a5ba03989ef7d3680e444276765252ec\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:27.1.0] C:\Users\zrk83\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.0.aar\bd284d65ec86e257015b88f7fee1ed6a\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\zrk83\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\5f08a861990a35a811fcd5d33824bca2\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\zrk83\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\dc26bf173b8cb986d26785e6c5fdfa40\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\zrk83\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\5914f8fc86cafaa292696319947df2c4\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\zrk83\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\2d5c457e829cbecf482227f851671130\AndroidManifest.xml:17:1-22:12
+INJECTED from C:\Users\zrk83\Documents\Repositories\MecaRunApp\app\src\main\AndroidManifest.xml:2:1-26:12
+INJECTED from C:\Users\zrk83\Documents\Repositories\MecaRunApp\app\src\main\AndroidManifest.xml:2:1-26:12
+INJECTED from C:\Users\zrk83\Documents\Repositories\MecaRunApp\app\src\main\AndroidManifest.xml:2:1-26:12
+	package
+		ADDED from C:\Users\zrk83\Documents\Repositories\MecaRunApp\app\src\main\AndroidManifest.xml:3:5-37
+		INJECTED from C:\Users\zrk83\Documents\Repositories\MecaRunApp\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\zrk83\Documents\Repositories\MecaRunApp\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from C:\Users\zrk83\Documents\Repositories\MecaRunApp\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\zrk83\Documents\Repositories\MecaRunApp\app\src\main\AndroidManifest.xml:2:1-26:12
+		INJECTED from C:\Users\zrk83\Documents\Repositories\MecaRunApp\app\src\main\AndroidManifest.xml
+	android:versionCode
+		INJECTED from C:\Users\zrk83\Documents\Repositories\MecaRunApp\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\zrk83\Documents\Repositories\MecaRunApp\app\src\main\AndroidManifest.xml:2:1-26:12
+		INJECTED from C:\Users\zrk83\Documents\Repositories\MecaRunApp\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\Users\zrk83\Documents\Repositories\MecaRunApp\app\src\main\AndroidManifest.xml:2:11-69
+uses-permission#android.permission.BLUETOOTH
+ADDED from C:\Users\zrk83\Documents\Repositories\MecaRunApp\app\src\main\AndroidManifest.xml:5:5-67
+	android:name
+		ADDED from C:\Users\zrk83\Documents\Repositories\MecaRunApp\app\src\main\AndroidManifest.xml:5:22-65
+uses-permission#android.permission.BLUETOOTH_ADMIN
+ADDED from C:\Users\zrk83\Documents\Repositories\MecaRunApp\app\src\main\AndroidManifest.xml:6:5-73
+	android:name
+		ADDED from C:\Users\zrk83\Documents\Repositories\MecaRunApp\app\src\main\AndroidManifest.xml:6:22-71
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from C:\Users\zrk83\Documents\Repositories\MecaRunApp\app\src\main\AndroidManifest.xml:7:5-81
+	android:name
+		ADDED from C:\Users\zrk83\Documents\Repositories\MecaRunApp\app\src\main\AndroidManifest.xml:7:22-78
+application
+ADDED from C:\Users\zrk83\Documents\Repositories\MecaRunApp\app\src\main\AndroidManifest.xml:9:5-24:19
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\zrk83\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\5e1e5273e5338ae560a210e2d119a5ee\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\zrk83\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\5e1e5273e5338ae560a210e2d119a5ee\AndroidManifest.xml:9:5-20
+	android:supportsRtl
+		ADDED from C:\Users\zrk83\Documents\Repositories\MecaRunApp\app\src\main\AndroidManifest.xml:14:9-35
+	android:label
+		ADDED from C:\Users\zrk83\Documents\Repositories\MecaRunApp\app\src\main\AndroidManifest.xml:12:9-41
+	android:roundIcon
+		ADDED from C:\Users\zrk83\Documents\Repositories\MecaRunApp\app\src\main\AndroidManifest.xml:13:9-54
+	android:icon
+		ADDED from C:\Users\zrk83\Documents\Repositories\MecaRunApp\app\src\main\AndroidManifest.xml:11:9-43
+	android:allowBackup
+		ADDED from C:\Users\zrk83\Documents\Repositories\MecaRunApp\app\src\main\AndroidManifest.xml:10:9-35
+	android:theme
+		ADDED from C:\Users\zrk83\Documents\Repositories\MecaRunApp\app\src\main\AndroidManifest.xml:15:9-41
+activity#tech.elecholic.mecarun.LaunchActivity
+ADDED from C:\Users\zrk83\Documents\Repositories\MecaRunApp\app\src\main\AndroidManifest.xml:16:9-21:20
+	android:name
+		ADDED from C:\Users\zrk83\Documents\Repositories\MecaRunApp\app\src\main\AndroidManifest.xml:16:19-49
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from C:\Users\zrk83\Documents\Repositories\MecaRunApp\app\src\main\AndroidManifest.xml:17:13-20:29
+action#android.intent.action.MAIN
+ADDED from C:\Users\zrk83\Documents\Repositories\MecaRunApp\app\src\main\AndroidManifest.xml:18:17-69
+	android:name
+		ADDED from C:\Users\zrk83\Documents\Repositories\MecaRunApp\app\src\main\AndroidManifest.xml:18:25-66
+category#android.intent.category.LAUNCHER
+ADDED from C:\Users\zrk83\Documents\Repositories\MecaRunApp\app\src\main\AndroidManifest.xml:19:17-77
+	android:name
+		ADDED from C:\Users\zrk83\Documents\Repositories\MecaRunApp\app\src\main\AndroidManifest.xml:19:27-74
+activity#tech.elecholic.mecarun.MainActivity
+ADDED from C:\Users\zrk83\Documents\Repositories\MecaRunApp\app\src\main\AndroidManifest.xml:22:9-49
+	android:name
+		ADDED from C:\Users\zrk83\Documents\Repositories\MecaRunApp\app\src\main\AndroidManifest.xml:22:19-47
+activity#tech.elecholic.mecarun.ControlActivity
+ADDED from C:\Users\zrk83\Documents\Repositories\MecaRunApp\app\src\main\AndroidManifest.xml:23:9-52
+	android:name
+		ADDED from C:\Users\zrk83\Documents\Repositories\MecaRunApp\app\src\main\AndroidManifest.xml:23:19-50
+uses-sdk
+INJECTED from C:\Users\zrk83\Documents\Repositories\MecaRunApp\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\zrk83\Documents\Repositories\MecaRunApp\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\zrk83\Documents\Repositories\MecaRunApp\app\src\main\AndroidManifest.xml
+MERGED from [com.android.support:appcompat-v7:27.1.0] C:\Users\zrk83\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.0.aar\0aad7d85238d51e674372fddf3edaf70\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.1.0] C:\Users\zrk83\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.0.aar\0aad7d85238d51e674372fddf3edaf70\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\zrk83\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\5e1e5273e5338ae560a210e2d119a5ee\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\zrk83\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\5e1e5273e5338ae560a210e2d119a5ee\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:support-fragment:27.1.0] C:\Users\zrk83\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.0.aar\cc869da6e984f2a946ba102785abcba6\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.0] C:\Users\zrk83\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.0.aar\cc869da6e984f2a946ba102785abcba6\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.0] C:\Users\zrk83\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.0.aar\52ca45cc328a74579727a296d97e0e0d\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.0] C:\Users\zrk83\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.0.aar\52ca45cc328a74579727a296d97e0e0d\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.0] C:\Users\zrk83\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.0.aar\5cc8bb3c765209ff5aa8d1507a06f5ef\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.0] C:\Users\zrk83\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.0.aar\5cc8bb3c765209ff5aa8d1507a06f5ef\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.0] C:\Users\zrk83\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.0.aar\8634a234133af22a2e3a2cee53be5912\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.0] C:\Users\zrk83\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.0.aar\8634a234133af22a2e3a2cee53be5912\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.0] C:\Users\zrk83\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.0.aar\a5ba03989ef7d3680e444276765252ec\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.0] C:\Users\zrk83\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.0.aar\a5ba03989ef7d3680e444276765252ec\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.0] C:\Users\zrk83\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.0.aar\bd284d65ec86e257015b88f7fee1ed6a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.0] C:\Users\zrk83\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.0.aar\bd284d65ec86e257015b88f7fee1ed6a\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\zrk83\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\5f08a861990a35a811fcd5d33824bca2\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\zrk83\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\5f08a861990a35a811fcd5d33824bca2\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\zrk83\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\dc26bf173b8cb986d26785e6c5fdfa40\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\zrk83\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\dc26bf173b8cb986d26785e6c5fdfa40\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\zrk83\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\5914f8fc86cafaa292696319947df2c4\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\zrk83\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\5914f8fc86cafaa292696319947df2c4\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\zrk83\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\2d5c457e829cbecf482227f851671130\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\zrk83\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\2d5c457e829cbecf482227f851671130\AndroidManifest.xml:20:5-44
+INJECTED from C:\Users\zrk83\Documents\Repositories\MecaRunApp\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\zrk83\Documents\Repositories\MecaRunApp\app\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from C:\Users\zrk83\Documents\Repositories\MecaRunApp\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\zrk83\Documents\Repositories\MecaRunApp\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\zrk83\Documents\Repositories\MecaRunApp\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from C:\Users\zrk83\Documents\Repositories\MecaRunApp\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\zrk83\Documents\Repositories\MecaRunApp\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\zrk83\Documents\Repositories\MecaRunApp\app\src\main\AndroidManifest.xml

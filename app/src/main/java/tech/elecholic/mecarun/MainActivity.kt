@@ -37,6 +37,7 @@ class MainActivity : AppCompatActivity() {
     private val PERMISSION_REQUEST_COARSE_LOCATION = 1
     private var MY_UUID = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB")
     private val TAG = "MainActivity"
+    private var deviceFoundFlag = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -60,7 +61,7 @@ class MainActivity : AppCompatActivity() {
         {
             checkAccredit()
             initFilter()
-            startServer()
+            //startServer()
         }
     }
 
@@ -122,6 +123,7 @@ class MainActivity : AppCompatActivity() {
     fun startConnection(mmDevice: BluetoothDevice) {
         // Start a thread for connection
         mBluetoothAdapter.cancelDiscovery()
+        connectingAnimation(this)
         var bluetoothSocket: BluetoothSocket? = null
         try {
             bluetoothSocket = mmDevice.createInsecureRfcommSocketToServiceRecord(MY_UUID)
@@ -171,6 +173,94 @@ class MainActivity : AppCompatActivity() {
     }
 
     /**
+     * Animation shown while scaning
+     */
+    private fun scaningAnimation(context: Context) {
+        // Set animation
+        // Accelerate rotating mecanum
+        val highAnimation = AnimationUtils.loadAnimation(context, R.anim.zoom_in)
+        highAnimation.interpolator = LinearInterpolator()
+        mecanum_icon.startAnimation(highAnimation)
+        // Button leave
+        val leftAnimation = AnimationUtils.loadAnimation(context, R.anim.left_out)
+        val rightAnimation = AnimationUtils.loadAnimation(context, R.anim.right_out)
+        rightAnimation.fillAfter = true
+        leftAnimation.fillAfter = true
+        launchBtn.startAnimation(rightAnimation)
+        searchBtn.startAnimation(leftAnimation)
+        // Text flash
+        searchText.visibility = View.VISIBLE
+        notFoundText.visibility = View.GONE
+        val alphaAnimation = AlphaAnimation(0f, 1f)
+        alphaAnimation.duration = 1000
+        alphaAnimation.interpolator = LinearInterpolator()
+        alphaAnimation.repeatCount = Animation.INFINITE
+        alphaAnimation.repeatMode = Animation.REVERSE
+        searchText.startAnimation(alphaAnimation)
+    }
+
+    /**
+     * Animation shown while scaning
+     */
+    private fun connectingAnimation(context: Context) {
+        // Text flash
+        searchText.visibility = View.GONE
+        notFoundText.visibility = View.GONE
+        connectingText.visibility = View.VISIBLE
+        val alphaAnimation = AlphaAnimation(0f, 1f)
+        alphaAnimation.duration = 1000
+        alphaAnimation.interpolator = LinearInterpolator()
+        alphaAnimation.repeatCount = Animation.INFINITE
+        alphaAnimation.repeatMode = Animation.REVERSE
+        searchText.clearAnimation()
+        connectingText.startAnimation(alphaAnimation)
+    }
+
+    /**
+     * Animation shown if device not found
+     */
+    private fun notFoundAnimation(context: Context) {
+        // Set animation
+        // Recover rotating speed
+        val lowAnimation = AnimationUtils.loadAnimation(context, R.anim.zoom_out)
+        lowAnimation.interpolator = LinearInterpolator()
+        mecanum_icon.startAnimation(lowAnimation)
+        // Button back
+        val leftAnimation = AnimationUtils.loadAnimation(context, R.anim.left_in)
+        val rightAnimation = AnimationUtils.loadAnimation(context, R.anim.right_in)
+        rightAnimation.fillAfter = true
+        leftAnimation.fillAfter = true
+        launchBtn.startAnimation(leftAnimation)
+        searchBtn.startAnimation(rightAnimation)
+        // Set text
+        searchText.visibility = View.GONE
+        searchText.clearAnimation()
+        notFoundText.visibility = View.VISIBLE
+    }
+
+    /**
+     * Animation shown if connection failed
+     */
+    private fun connectionFailedAnimation(context: Context) {
+        // Set animation
+        // Recover rotating speed
+        val lowAnimation = AnimationUtils.loadAnimation(context, R.anim.zoom_out)
+        lowAnimation.interpolator = LinearInterpolator()
+        mecanum_icon.startAnimation(lowAnimation)
+        // Button back
+        val leftAnimation = AnimationUtils.loadAnimation(context, R.anim.left_in)
+        val rightAnimation = AnimationUtils.loadAnimation(context, R.anim.right_in)
+        rightAnimation.fillAfter = true
+        leftAnimation.fillAfter = true
+        launchBtn.startAnimation(leftAnimation)
+        searchBtn.startAnimation(rightAnimation)
+        // Set text
+        searchText.visibility = View.GONE
+        searchText.clearAnimation()
+        connectionFailedText.visibility = View.VISIBLE
+    }
+
+    /**
      * Initialize broadcast receiver
      */
     private val mBluetoothReceiver = object: BroadcastReceiver() {
@@ -184,59 +274,26 @@ class MainActivity : AppCompatActivity() {
                     val name = scanDevice.name
                     val address = scanDevice.address
                     if (name == "ZINGBT"){
-                        Thread {
-                            try {
-                                scanDevice.javaClass.getMethod("createBond").invoke(scanDevice)
-                            } catch (e: Exception) {
-                                Log.i(TAG, "Bond failed")
-                            }
-                            startConnection(scanDevice)
-                        }.start()
+                        deviceFoundFlag = 1
+                        try {
+                            scanDevice.javaClass.getMethod("createBond").invoke(scanDevice)
+                        } catch (e: Exception) {
+                            Log.i(TAG, "Bond failed")
+                            connectionFailedAnimation(context)
+                        }
+                        startConnection(scanDevice)
                     }
                     Log.i(TAG, "name = $name address = $address")
                 }
                 BluetoothAdapter.ACTION_DISCOVERY_STARTED -> {
                     Log.i(TAG, "Start scanning")
-                    // Set animation
-                    // Accelerate rotating mecanum
-                    val highAnimation = AnimationUtils.loadAnimation(context, R.anim.zoom_in)
-                    highAnimation.interpolator = LinearInterpolator()
-                    mecanum_icon.startAnimation(highAnimation)
-                    // Button leave
-                    val leftAnimation = AnimationUtils.loadAnimation(context, R.anim.left_out)
-                    val rightAnimation = AnimationUtils.loadAnimation(context, R.anim.right_out)
-                    rightAnimation.fillAfter = true
-                    leftAnimation.fillAfter = true
-                    launchBtn.startAnimation(rightAnimation)
-                    searchBtn.startAnimation(leftAnimation)
-                    // Text flash
-                    searchText.visibility = View.VISIBLE
-                    notFoundText.visibility = View.GONE
-                    val alphaAnimation = AlphaAnimation(0f, 1f)
-                    alphaAnimation.duration = 1000
-                    alphaAnimation.interpolator = LinearInterpolator()
-                    alphaAnimation.repeatCount = Animation.INFINITE
-                    alphaAnimation.repeatMode = Animation.REVERSE
-                    searchText.startAnimation(alphaAnimation)
+                    scaningAnimation(context)
                 }
                 BluetoothAdapter.ACTION_DISCOVERY_FINISHED -> {
                     Log.i(TAG, "Finish scanning")
-                    // Set animation
-                    // Recover rotating speed
-                    val lowAnimation = AnimationUtils.loadAnimation(context, R.anim.zoom_out)
-                    lowAnimation.interpolator = LinearInterpolator()
-                    mecanum_icon.startAnimation(lowAnimation)
-                    // Button back
-                    val leftAnimation = AnimationUtils.loadAnimation(context, R.anim.left_in)
-                    val rightAnimation = AnimationUtils.loadAnimation(context, R.anim.right_in)
-                    rightAnimation.fillAfter = true
-                    leftAnimation.fillAfter = true
-                    launchBtn.startAnimation(leftAnimation)
-                    searchBtn.startAnimation(rightAnimation)
-                    // Set text
-                    searchText.visibility = View.GONE
-                    searchText.clearAnimation()
-                    notFoundText.visibility = View.VISIBLE
+                    if (deviceFoundFlag == 0) {
+                        notFoundAnimation(context)
+                    }
                 }
             }
         }
@@ -256,6 +313,13 @@ class MainActivity : AppCompatActivity() {
      * Search devices
      */
     fun searchDevices() {
+        val pairedDevices = mBluetoothAdapter.bondedDevices
+        for (mmDevice in pairedDevices)
+            if (mmDevice.name == "ZINGBT") {
+                deviceFoundFlag = 1
+                connectingAnimation(this)
+                startConnection(mmDevice)
+            }
         if (mBluetoothAdapter.isDiscovering) {
             mBluetoothAdapter.cancelDiscovery()
         }
