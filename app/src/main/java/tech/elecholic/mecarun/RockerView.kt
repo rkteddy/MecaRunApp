@@ -26,8 +26,8 @@ class RockerView: View {
     private lateinit var mListener: OnAngleChangedListener
     private var OUTER_WIDTH_SIZE: Int
     private var OUTER_HEIGHT_SIZE: Int
-    private val INNER_COLOR_DEFAULT = Color.parseColor("#d32f2f")
-    private val OUTER_COLOR_DEFAULT = Color.parseColor("#f44336")
+    private val INNER_COLOR_DEFAULT = Color.parseColor("#5b5b5b")
+    private val OUTER_COLOR_DEFAULT = Color.parseColor("#878787")
 
     constructor(context: Context) : this(context, null)
 

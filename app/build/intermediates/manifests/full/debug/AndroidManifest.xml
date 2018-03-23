@@ -28,7 +28,9 @@
             </intent-filter>
         </activity>
         <activity android:name="tech.elecholic.mecarun.MainActivity" />
-        <activity android:name="tech.elecholic.mecarun.ControlActivity" />
+        <activity
+            android:name="tech.elecholic.mecarun.ControlActivity"
+            android:screenOrientation="landscape" />
     </application>
 
 </manifest>

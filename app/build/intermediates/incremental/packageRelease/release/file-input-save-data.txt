@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Sat Mar 10 23:28:26 CST 2018
+#Tue Mar 13 17:38:11 CST 2018
 0.baseType=DIRECTORY
 0.base=C\:\\Users\\zrk83\\Documents\\Repositories\\MecaRunApp\\app\\build\\intermediates\\transforms\\dex\\release\\0
 0.path=classes.dex

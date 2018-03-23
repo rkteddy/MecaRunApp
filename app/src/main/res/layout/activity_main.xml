@@ -86,9 +86,9 @@
 
     <TextView
         android:id="@+id/connectingText"
-        android:layout_width="280dp"
+        android:layout_width="300dp"
         android:layout_height="30dp"
-        android:text="Connecting...Please wait"
+        android:text="Connecting...Please wait..."
         android:textAllCaps="false"
         android:textSize="24sp"
         android:textStyle="bold|italic"

@@ -1,5 +1,6 @@
 package tech.elecholic.mecarun
 
+import android.content.pm.ActivityInfo
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
@@ -20,14 +21,13 @@ class ControlActivity: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_control)
         Thread{
-
             val buffer = ByteArray(1024)
 
             while (true) {
                 while (mmInputStream.available() == 0) {}
                 try {
                     mmInputStream!!.read(buffer)
-                    textView.text = String(buffer)
+                    angleView.text = String(buffer)
                     Log.i(TAG, "Receive ${String(buffer)}")
                 } catch (e: Exception) {
                     break
@@ -37,17 +37,10 @@ class ControlActivity: AppCompatActivity() {
 
         rockerView.setOnAngleChangedListener(object: RockerView.OnAngleChangedListener {
             override fun onAngleChanged(ang: Float) {
-                textView.text = ang.toString()
+                mmOutputSteam.write((ang.toString() + "\n").toByteArray())
+                Log.i(TAG, "Send $ang")
+                angleView.text = ang.toString()
             }
         })
-    }
-
-    fun sendOK(v: View) {
-        try {
-            mmOutputSteam.write("OK".toByteArray())
-            Log.i(TAG, "Send")
-        } catch (e: Exception) {
-            Log.i(TAG, "Cannot write!")
-        }
     }
 }

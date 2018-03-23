@@ -20,7 +20,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity"/>
-        <activity android:name=".ControlActivity"/>
+        <activity android:name=".ControlActivity"
+                  android:screenOrientation="landscape"/>
     </application>
 
 </manifest>

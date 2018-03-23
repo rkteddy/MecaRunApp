@@ -1,4 +1,4 @@
-#Sat Mar 10 15:52:06 CST 2018
+#Tue Mar 13 17:22:04 CST 2018
 base.0=C\:\\Users\\zrk83\\Documents\\Repositories\\MecaRunApp\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\1
 path.0=classes.dex
 renamed.0=classes.dex
