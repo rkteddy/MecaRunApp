@@ -13,34 +13,63 @@ class ControlActivity: AppCompatActivity() {
 
     private val mBluetoothSocketHandler = BluetoothSocketHandler.get()
     private val socket = mBluetoothSocketHandler.getSocket()
-    val mmOutputSteam = socket.outputStream
+    val mmOutputStream = socket.outputStream
     val mmInputStream = socket.inputStream
-    val TAG = "ControlActivity"
+    val outputHeader_1 = 0xff
+    val outputHeader_2 = 0xfe
+    val outputHeader_3 = 0x01
+    var x = 0
+    var y = 0
+    var r = 0
+    val outputEnd = 0x00
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_control)
-        Thread{
+        /*Thread{
             val buffer = ByteArray(1024)
 
             while (true) {
                 while (mmInputStream.available() == 0) {}
                 try {
                     mmInputStream!!.read(buffer)
-                    angleView.text = String(buffer)
                     Log.i(TAG, "Receive ${String(buffer)}")
                 } catch (e: Exception) {
                     break
                 }
             }
-        }.start()
+        }.start()*/
 
-        rockerView.setOnAngleChangedListener(object: RockerView.OnAngleChangedListener {
-            override fun onAngleChanged(ang: Float) {
-                mmOutputSteam.write((ang.toString() + "\n").toByteArray())
-                Log.i(TAG, "Send $ang")
-                angleView.text = ang.toString()
+        rockerViewLeft.setOnSpeedChangedListener(object: RockerView.OnSpeedChangedListener {
+            override fun onSpeedChanged(xSpeed: Float, ySpeed: Float) {
+                x = xSpeed.toInt()
+                y = ySpeed.toInt()
+                xSpeedTextView.text = x.toString()
+                ySpeedTextView.text = y.toString()
             }
         })
+
+        rockerViewRight.setOnSpeedChangedListener(object: RockerView.OnSpeedChangedListener {
+            override fun onSpeedChanged(xSpeed: Float, ySpeed: Float) {
+                r = xSpeed.toInt()
+                rotationTextView.text = r.toString()
+            }
+        })
+
+        Thread{
+            while (true) {
+                Thread.sleep(50)
+                mmOutputStream.write(outputHeader_1)
+                mmOutputStream.write(outputHeader_2)
+                mmOutputStream.write(outputHeader_3)
+                mmOutputStream.write(x/256)
+                mmOutputStream.write(x%256)
+                mmOutputStream.write(y/256)
+                mmOutputStream.write(y%256)
+                mmOutputStream.write(r/256)
+                mmOutputStream.write(r%256)
+                mmOutputStream.write(outputEnd)
+            }
+        }.start()
     }
 }

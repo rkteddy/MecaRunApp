@@ -23,7 +23,7 @@ class RockerView: View {
     private var angle = 0f
     private var outerCircle: Paint
     private var innerCircle: Paint
-    private lateinit var mListener: OnAngleChangedListener
+    private lateinit var speedListener: OnSpeedChangedListener
     private var OUTER_WIDTH_SIZE: Int
     private var OUTER_HEIGHT_SIZE: Int
     private val INNER_COLOR_DEFAULT = Color.parseColor("#5b5b5b")
@@ -138,6 +138,7 @@ class RockerView: View {
         if (event.action == MotionEvent.ACTION_UP) {
             innerCircleX = realWidth/2
             innerCircleY = realHeight/2
+            speedListener.onSpeedChanged(0.toFloat(), 0.toFloat())
             invalidate()
         }
         return true
@@ -156,9 +157,7 @@ class RockerView: View {
         val relativeR = Math.sqrt(Math.pow(relativeX, 2.0) + Math.pow(relativeY, 2.0))
         val sin = relativeY / relativeR
         val cos = relativeX / relativeR
-        angle = (Math.asin(sin) * 180.0 / 3.14159).toFloat() - 90
-        if (cos > 0) angle = -angle
-        mListener.onAngleChanged(angle)
+
         val isPointInOuterCircle: Boolean = (Math.pow(relativeX, 2.0) + Math.pow(relativeY, 2.0)
                 <= Math.pow(outerRadius.toDouble(), 2.0))
         if (isPointInOuterCircle) {
@@ -168,17 +167,22 @@ class RockerView: View {
             innerCircleX = (outerX + outerRadius * 3/4 * cos).toFloat()
             innerCircleY = (outerY - outerRadius * 3/4 * sin).toFloat()
         }
+
+        angle = (Math.asin(sin) * 180.0 / 3.14159).toFloat() - 90
+        if (cos > 0) angle = -angle
+        speedListener.onSpeedChanged((innerCircleX - outerX) / 74 * 1000, (innerCircleY - outerY) / 74 * 1000)
+
         invalidate()
     }
 
     /**
      * Listener
      */
-    interface OnAngleChangedListener {
-        fun onAngleChanged(ang: Float)
+    interface OnSpeedChangedListener {
+        fun onSpeedChanged(xSpeed: Float, ySpeed: Float)
     }
 
-    fun setOnAngleChangedListener(listener: OnAngleChangedListener) {
-        mListener = listener
+    fun setOnSpeedChangedListener(listener: OnSpeedChangedListener) {
+        speedListener = listener
     }
 }

@@ -1,11 +1,11 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\zrk83\Documents\Repositories\MecaRunApp\app\src\main\AndroidManifest.xml:2:1-26:12
-INJECTED from C:\Users\zrk83\Documents\Repositories\MecaRunApp\app\src\main\AndroidManifest.xml:2:1-26:12
-INJECTED from C:\Users\zrk83\Documents\Repositories\MecaRunApp\app\src\main\AndroidManifest.xml:2:1-26:12
-INJECTED from C:\Users\zrk83\Documents\Repositories\MecaRunApp\app\src\main\AndroidManifest.xml:2:1-26:12
+ADDED from C:\Users\zrk83\Documents\Repositories\MecaRunApp\app\src\main\AndroidManifest.xml:2:1-27:12
+INJECTED from C:\Users\zrk83\Documents\Repositories\MecaRunApp\app\src\main\AndroidManifest.xml:2:1-27:12
+INJECTED from C:\Users\zrk83\Documents\Repositories\MecaRunApp\app\src\main\AndroidManifest.xml:2:1-27:12
+INJECTED from C:\Users\zrk83\Documents\Repositories\MecaRunApp\app\src\main\AndroidManifest.xml:2:1-27:12
 MERGED from [com.android.support:appcompat-v7:27.1.0] C:\Users\zrk83\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.0.aar\0aad7d85238d51e674372fddf3edaf70\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\zrk83\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\5e1e5273e5338ae560a210e2d119a5ee\AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\zrk83\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\273e875953a2b12ee8acedcf43ff582c\AndroidManifest.xml:2:1-11:12
 MERGED from [com.android.support:support-fragment:27.1.0] C:\Users\zrk83\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.0.aar\cc869da6e984f2a946ba102785abcba6\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:animated-vector-drawable:27.1.0] C:\Users\zrk83\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.0.aar\52ca45cc328a74579727a296d97e0e0d\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-core-ui:27.1.0] C:\Users\zrk83\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.0.aar\5cc8bb3c765209ff5aa8d1507a06f5ef\AndroidManifest.xml:17:1-22:12
@@ -16,20 +16,20 @@ MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\zrk83\.gradle\
 MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\zrk83\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\dc26bf173b8cb986d26785e6c5fdfa40\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\zrk83\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\5914f8fc86cafaa292696319947df2c4\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.core:runtime:1.1.0] C:\Users\zrk83\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\2d5c457e829cbecf482227f851671130\AndroidManifest.xml:17:1-22:12
-INJECTED from C:\Users\zrk83\Documents\Repositories\MecaRunApp\app\src\main\AndroidManifest.xml:2:1-26:12
-INJECTED from C:\Users\zrk83\Documents\Repositories\MecaRunApp\app\src\main\AndroidManifest.xml:2:1-26:12
-INJECTED from C:\Users\zrk83\Documents\Repositories\MecaRunApp\app\src\main\AndroidManifest.xml:2:1-26:12
+INJECTED from C:\Users\zrk83\Documents\Repositories\MecaRunApp\app\src\main\AndroidManifest.xml:2:1-27:12
+INJECTED from C:\Users\zrk83\Documents\Repositories\MecaRunApp\app\src\main\AndroidManifest.xml:2:1-27:12
+INJECTED from C:\Users\zrk83\Documents\Repositories\MecaRunApp\app\src\main\AndroidManifest.xml:2:1-27:12
 	package
 		ADDED from C:\Users\zrk83\Documents\Repositories\MecaRunApp\app\src\main\AndroidManifest.xml:3:5-37
 		INJECTED from C:\Users\zrk83\Documents\Repositories\MecaRunApp\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\zrk83\Documents\Repositories\MecaRunApp\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\zrk83\Documents\Repositories\MecaRunApp\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\zrk83\Documents\Repositories\MecaRunApp\app\src\main\AndroidManifest.xml:2:1-26:12
+		ADDED from C:\Users\zrk83\Documents\Repositories\MecaRunApp\app\src\main\AndroidManifest.xml:2:1-27:12
 		INJECTED from C:\Users\zrk83\Documents\Repositories\MecaRunApp\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from C:\Users\zrk83\Documents\Repositories\MecaRunApp\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\zrk83\Documents\Repositories\MecaRunApp\app\src\main\AndroidManifest.xml:2:1-26:12
+		ADDED from C:\Users\zrk83\Documents\Repositories\MecaRunApp\app\src\main\AndroidManifest.xml:2:1-27:12
 		INJECTED from C:\Users\zrk83\Documents\Repositories\MecaRunApp\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\zrk83\Documents\Repositories\MecaRunApp\app\src\main\AndroidManifest.xml:2:11-69
@@ -46,9 +46,9 @@ ADDED from C:\Users\zrk83\Documents\Repositories\MecaRunApp\app\src\main\Android
 	android:name
 		ADDED from C:\Users\zrk83\Documents\Repositories\MecaRunApp\app\src\main\AndroidManifest.xml:7:22-78
 application
-ADDED from C:\Users\zrk83\Documents\Repositories\MecaRunApp\app\src\main\AndroidManifest.xml:9:5-24:19
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\zrk83\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\5e1e5273e5338ae560a210e2d119a5ee\AndroidManifest.xml:9:5-20
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\zrk83\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\5e1e5273e5338ae560a210e2d119a5ee\AndroidManifest.xml:9:5-20
+ADDED from C:\Users\zrk83\Documents\Repositories\MecaRunApp\app\src\main\AndroidManifest.xml:9:5-25:19
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\zrk83\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\273e875953a2b12ee8acedcf43ff582c\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\zrk83\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\273e875953a2b12ee8acedcf43ff582c\AndroidManifest.xml:9:5-20
 	android:supportsRtl
 		ADDED from C:\Users\zrk83\Documents\Repositories\MecaRunApp\app\src\main\AndroidManifest.xml:14:9-35
 	android:label
@@ -80,7 +80,9 @@ ADDED from C:\Users\zrk83\Documents\Repositories\MecaRunApp\app\src\main\Android
 	android:name
 		ADDED from C:\Users\zrk83\Documents\Repositories\MecaRunApp\app\src\main\AndroidManifest.xml:22:19-47
 activity#tech.elecholic.mecarun.ControlActivity
-ADDED from C:\Users\zrk83\Documents\Repositories\MecaRunApp\app\src\main\AndroidManifest.xml:23:9-52
+ADDED from C:\Users\zrk83\Documents\Repositories\MecaRunApp\app\src\main\AndroidManifest.xml:23:9-24:58
+	android:screenOrientation
+		ADDED from C:\Users\zrk83\Documents\Repositories\MecaRunApp\app\src\main\AndroidManifest.xml:24:19-56
 	android:name
 		ADDED from C:\Users\zrk83\Documents\Repositories\MecaRunApp\app\src\main\AndroidManifest.xml:23:19-50
 uses-sdk
@@ -89,8 +91,8 @@ INJECTED from C:\Users\zrk83\Documents\Repositories\MecaRunApp\app\src\main\Andr
 INJECTED from C:\Users\zrk83\Documents\Repositories\MecaRunApp\app\src\main\AndroidManifest.xml
 MERGED from [com.android.support:appcompat-v7:27.1.0] C:\Users\zrk83\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.0.aar\0aad7d85238d51e674372fddf3edaf70\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:appcompat-v7:27.1.0] C:\Users\zrk83\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.0.aar\0aad7d85238d51e674372fddf3edaf70\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\zrk83\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\5e1e5273e5338ae560a210e2d119a5ee\AndroidManifest.xml:5:5-7:41
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\zrk83\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\5e1e5273e5338ae560a210e2d119a5ee\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\zrk83\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\273e875953a2b12ee8acedcf43ff582c\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\zrk83\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\273e875953a2b12ee8acedcf43ff582c\AndroidManifest.xml:5:5-7:41
 MERGED from [com.android.support:support-fragment:27.1.0] C:\Users\zrk83\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.0.aar\cc869da6e984f2a946ba102785abcba6\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-fragment:27.1.0] C:\Users\zrk83\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.0.aar\cc869da6e984f2a946ba102785abcba6\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:animated-vector-drawable:27.1.0] C:\Users\zrk83\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.0.aar\52ca45cc328a74579727a296d97e0e0d\AndroidManifest.xml:20:5-44
