@@ -110,10 +110,13 @@ class MainActivity : AppCompatActivity() {
      * Search devices
      */
     fun onClickSearch(v: View) {
-        if (mBluetoothAdapter.isDiscovering) {
-            mBluetoothAdapter.cancelDiscovery()
+//        if (mBluetoothAdapter.isDiscovering) {
+//            mBluetoothAdapter.cancelDiscovery()
+//        }
+//        mBluetoothAdapter.startDiscovery()
+        if (!mBluetoothAdapter.isDiscovering) {
+            mBluetoothAdapter.startDiscovery()
         }
-        mBluetoothAdapter.startDiscovery()
         Log.i(TAG, "Clicked")
     }
 
